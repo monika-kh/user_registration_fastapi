@@ -1,22 +1,20 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-import models
 import asyncpg
 import motor.motor_asyncio
-import local
 
 app = FastAPI()
 
 # PostgreSQL connection settings
-POSTGRES_USER = local.POSTGRES_USER2
-POSTGRES_PASSWORD = local.POSTGRES_PASSWORD2
-POSTGRES_DB = local.POSTGRES_DB2
-POSTGRES_HOST = local.POSTGRES_HOST2
+POSTGRES_USER = "postgres"
+POSTGRES_PASSWORD= "root"
+POSTGRES_DB = "fastapi_db"
+POSTGRES_HOST = "localhost"
 
 # MongoDB connection settings
-MONGO_HOST = local.MONGO_HOST
-MONGO_PORT = local.MONGO_PORT
-MONGO_DB = local.MONGO_DB
+MONGO_HOST = "localhost"
+MONGO_PORT = "5432"
+MONGO_DB = "fastapi_mmongodb"
 
 # PostgreSQL connection pool
 async def get_postgres_pool():
