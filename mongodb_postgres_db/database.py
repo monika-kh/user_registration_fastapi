@@ -3,18 +3,23 @@ from pydantic import BaseModel
 import asyncpg
 import motor.motor_asyncio
 
+import os
+from dotenv import load_dotenv
+
 app = FastAPI()
 
+load_dotenv()
+
 # PostgreSQL connection settings
-POSTGRES_USER = "postgres"
-POSTGRES_PASSWORD= "root"
-POSTGRES_DB = "fastapi_db"
-POSTGRES_HOST = "localhost"
+POSTGRES_USER =  os.environ.get("POSTGRES_USER")
+POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD")
+POSTGRES_DB = os.environ.get("POSTGRES_DB")
+POSTGRES_HOST = os.environ.get("POSTGRES_HOST")
 
 # MongoDB connection settings
-MONGO_HOST = "localhost"
-MONGO_PORT = "5432"
-MONGO_DB = "fastapi_mmongodb"
+MONGO_HOST = os.environ.get("MONGO_HOST")
+MONGO_PORT = os.environ.get("MONGO_PORT")
+MONGO_DB = os.environ.get("MONGO_DB")
 
 # PostgreSQL connection pool
 async def get_postgres_pool():
