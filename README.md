@@ -2,7 +2,7 @@
 
 - Create virtualenv ```virtualenv -p python env```.
   
-- Install required requiremnts from requirements.txt file ```pip install -r requirements.txt```.
+- Install required requirements from requirements.txt file ```pip install -r requirements.txt```.
 
 - There are two directories for the tasks with different db requirements- **postgresdb** and **mongodb_postgres_db**.
 
